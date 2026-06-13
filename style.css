@@ -1,168 +1,163 @@
-/* --- Variables de Colores 80s --- */
+/* --- CONFIGURACIÓN GLOBAL Y COLORES --- */
 :root {
-    --bg-dark: #120c1f;       /* Fondo oscuro ochentero */
-    --panel-dark: #1d1630;   /* Fondo de tarjetas */
-    --neon-pink: #ff2a74;    /* Rosa eléctrico */
-    --neon-purple: #8a2be2;  /* Morado neón */
-    --retro-yellow: #f4df42; /* Amarillo retro */
-    --retro-cyan: #00f0ff;   /* Cian/Azul brillante */
-    --black-shadow: #000000; /* Sombra sólida */
+    --bg-color: #f7f4eb;       /* Fondo crema claro de tu imagen */
+    --text-black: #0d0d0d;     /* Negro puro para las letras */
+    --accent-orange: #ff451a;  /* Naranja/Rojo vivo de los botones */
+    --accent-blue: #2563eb;    /* Azul para los resaltados */
 }
 
-/* --- Estilos Generales --- */
-body {
-    font-family: 'Courier New', Courier, monospace; /* Tipografía estilo retro/código */
-    background-color: var(--bg-dark);
-    color: #ffffff;
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* --- Navegación --- */
+body {
+    font-family: 'Impact', 'Arial Black', sans-serif; /* Para lograr las letras gigantes y robustas */
+    background-color: var(--bg-color);
+    color: var(--text-black);
+}
+
+/* --- MENÚ DE NAVEGACIÓN --- */
 header {
-    background-color: var(--panel-dark);
-    border-bottom: 4px solid var(--neon-pink);
-    padding: 15px;
+    background-color: var(--bg-color);
+    border-bottom: 3px solid var(--text-black);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    background-color: var(--text-black);
+    color: var(--bg-color);
+    padding: 2px 8px;
+    margin-right: -4px;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
+    gap: 25px;
 }
 
 nav a {
-    color: #fff;
+    font-family: 'Courier New', Courier, monospace; /* Fuente monospace para el menú */
+    color: var(--text-black);
     text-decoration: none;
-    margin: 0 20px;
     font-weight: bold;
+    font-size: 0.95rem;
     text-transform: uppercase;
-    font-size: 1.1rem;
 }
 
 nav a:hover {
-    color: var(--retro-cyan);
-    text-shadow: 2px 2px var(--neon-pink);
+    border-bottom: 2px solid var(--text-black);
 }
 
-/* --- Sección Principal (Hero) --- */
-#hero {
-    text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(180deg, var(--panel-dark) 0%, var(--bg-dark) 100%);
+/* --- SECCIÓN PRINCIPAL (HERO) --- */
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+    position: relative;
 }
 
-#hero h1 {
-    font-size: 3.5rem;
+/* Etiquetas superiores pequeñas */
+.badges {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.badge {
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 8px;
+    border: 2px solid var(--text-black);
     text-transform: uppercase;
-    color: var(--retro-cyan);
-    text-shadow: 4px 4px 0px var(--neon-pink);
-    margin-bottom: 10px;
 }
 
-#hero p {
-    font-size: 1.3rem;
-    color: var(--retro-yellow);
+.badge.orange {
+    background-color: var(--accent-orange);
+    color: white;
 }
 
-/* --- El Botón Estilo 80s (Con el bloque de color debajo) --- */
-.btn-80s {
+/* Título Gigante */
+.hero-title {
+    font-size: 6.5rem; /* Letras masivas */
+    line-height: 0.85;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    max-width: 800px;
+}
+
+/* El bloque negro que encierra a "CÓDIGO" */
+.black-block {
+    background-color: var(--text-black);
+    color: var(--bg-color);
+    padding: 0 15px;
     display: inline-block;
-    font-family: inherit;
+}
+
+.text-orange {
+    color: var(--accent-orange);
+}
+
+/* --- TEXTO DE DESCRIPCIÓN --- */
+.hero-description {
+    font-family: 'Courier New', Courier, monospace; /* Tipo de letra de máquina de escribir */
     font-size: 1.1rem;
     font-weight: bold;
+    line-height: 1.4;
+    max-width: 400px;
+    margin-left: auto; /* Lo empuja a la derecha como tu imagen */
+    margin-top: -40px; /* Ajuste para encajar con el texto gigante */
+}
+
+.highlight-blue {
+    background-color: var(--accent-blue);
+    color: white;
+    padding: 0 4px;
+}
+
+/* --- EL BOTÓN DEL RECTÁNGULO DEBAJO (Tu firma de diseño) --- */
+.btn-container {
+    display: flex;
+    justify-content: flex-end; /* Lo alinea debajo del texto de descripción */
+    max-width: 1200px;
+    padding: 20px 40px;
+}
+
+.btn-retro {
+    font-family: 'Impact', sans-serif;
+    font-size: 1.3rem;
     text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    background-color: var(--text-black);
+    padding: 15px 35px;
+    border: none;
     text-decoration: none;
-    color: #000000;
-    background-color: var(--retro-yellow); /* Color del rectángulo de arriba */
-    padding: 12px 25px;
-    border: 3px solid #000000; /* Borde negro marcado */
+    display: inline-block;
     position: relative;
-    transition: all 0.1s ease;
     cursor: pointer;
     
-    /* Esta es la sombra sólida/bloque de color de los 80 que querías debajo */
-    box-shadow: 6px 6px 0px 0px var(--neon-pink); 
+    /* El bloque de color naranja desfasado justo detrás */
+    box-shadow: 10px 10px 0px 0px var(--accent-orange);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
-/* Efecto al pulsar el botón (se hunde hacia la sombra) */
-.btn-80s:active {
-    transform: translate(4px, 4px);
-    box-shadow: 2px 2px 0px 0px var(--neon-pink);
-}
-
-/* Variante del botón en otro color para contrastar */
-.btn-cyan {
-    background-color: var(--retro-cyan);
-    box-shadow: 6px 6px 0px 0px var(--retro-yellow);
-}
-.btn-cyan:active {
-    box-shadow: 2px 2px 0px 0px var(--retro-yellow);
-}
-
-/* --- Sección Proyectos --- */
-#proyectos {
-    padding: 80px 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-#proyectos h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    color: #fff;
-    text-shadow: 3px 3px 0px var(--neon-purple);
-    margin-bottom: 50px;
-}
-
-.grid-proyectos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-/* Tarjetas de proyectos estilo Retro-Brutalista */
-.proyecto-tarjeta {
-    background-color: var(--panel-dark);
-    padding: 30px;
-    border: 3px solid var(--neon-purple);
-    box-shadow: 8px 8px 0px var(--black-shadow); /* Sombra negra gruesa */
-    transition: transform 0.2s ease;
-}
-
-.proyecto-tarjeta:hover {
-    transform: translate(-4px, -4px);
-    border-color: var(--retro-cyan);
-    box-shadow: 12px 12px 0px var(--neon-pink); /* Cambia la sombra al pasar el ratón */
-}
-
-.proyecto-tarjeta h3 {
-    color: var(--retro-cyan);
-    margin-top: 0;
-    font-size: 1.5rem;
-}
-
-.proyecto-tarjeta p {
-    color: #cccccc;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
-
-/* --- Sección Contacto --- */
-#contacto {
-    text-align: center;
-    padding: 80px 20px;
-    background-color: var(--panel-dark);
-    border-top: 4px solid var(--retro-cyan);
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #08050e;
-    color: #666;
-    font-size: 0.9rem;
+/* Efecto al hacer clic */
+.btn-retro:active {
+    transform: translate(5px, 5px);
+    box-shadow: 5px 5px 0px 0px var(--accent-orange);
 }
