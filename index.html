@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio | 3D & Código</title>
+    <title>Portafolio | 3D, Código y Papel</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <div class="logo">
-            <span>PORT</span>FOLIO
-        </div>
+        <div class="logo"><span>PORT</span>FOLIO</div>
         <nav>
             <ul>
                 <li><a href="#sobre-mi">Sobre mí</a></li>
@@ -23,32 +21,92 @@
         </nav>
     </header>
 
-    <main class="hero-container">
+    <section class="hero-section" id="sobre-mi">
         
-        <div class="badges">
-            <span class="badge">Portfolio/2026</span>
-            <span class="badge orange">Disponible</span>
+        <div class="badges-row">
+            <span class="badge-rect">Portfolio/2026</span>
+            <span class="badge-rect filled">Disponible</span>
         </div>
 
-        <h1 class="hero-title">
+        <h1 class="huge-text">
             Hago<br>
-            <span class="text-orange">cosas</span><br>
+            <span class="text-color-orange">cosas</span><br>
             en 3d,<br>
-            <span class="black-block">código</span><br>
+            <span class="black-highlight">código</span><br>
             y<br>
             papel.
         </h1>
 
-        <p class="hero-description">
-            Modelador 3D, programador junior y dibujante. Aquí están mis trabajos 
-            – algunos puedes <span class="highlight-blue">descargar</span> y usar en tus juegos.
-        </p>
+        <div class="hero-footer-block">
+            <p class="desc-text">
+                Modelador 3D, programador junior y dibujante. Aquí están mis trabajos 
+                – algunos puedes <a href="#scripts" class="blue-inline-btn">descargar</a> y usar en tus juegos.
+            </p>
+            <a href="#renders" class="btn-ver-trabajos">Ver trabajos &rarr;</a>
+        </div>
 
-    </main>
+    </section>
 
-    <div class="btn-container">
-        <a href="#proyectos" class="btn-retro">Ver trabajos →</a>
-    </div>
+    <section class="content-section" id="renders">
+        <h2 class="section-title">_Renders</h2>
+        <div class="portfolio-grid">
+            
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/600x400" alt="Mi Render 3D"> 
+                <div class="item-info">
+                    <h3>Escena Cyberpunk 3D</h3>
+                    <p>Diseño de escenario exterior hecho en Blender y texturizado en Substance Painter.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="content-section" id="modelos">
+        <h2 class="section-title">_Modelos 3D</h2>
+        <div class="portfolio-grid">
+            
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/600x400" alt="Modelo 3D">
+                <div class="item-info">
+                    <h3>Personaje Low Poly</h3>
+                    <p>Optimizado para videojuegos de móvil. Menos de 5k polígonos.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="content-section" id="scripts">
+        <h2 class="section-title">_Scripts / Código</h2>
+        <div class="portfolio-grid">
+            
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/600x400" alt="Código">
+                <div class="item-info">
+                    <h3>Controller de Personaje en Unity</h3>
+                    <p>Script en C# para movimiento fluido en tercera persona.</p>
+                    <a href="#" class="blue-inline-btn" style="display:inline-block; padding: 5px 10px;">Descargar Script</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="content-section" id="props">
+        <h2 class="section-title">_Props</h2>
+        <div class="portfolio-grid">
+            
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/600x400" alt="Prop">
+                <div class="item-info">
+                    <h3>Pack de Armas Retro</h3>
+                    <p>Modelos de espadas y escudos con estética pixel-art 3D.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
 </body>
 </html>
