@@ -1,9 +1,11 @@
-/* --- CONFIGURACIÓN GLOBAL Y COLORES --- */
+/* --- CONFIGURACIÓN GLOBAL --- */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
+
 :root {
-    --bg-color: #f7f4eb;       /* Fondo crema claro de tu imagen */
-    --text-black: #0d0d0d;     /* Negro puro para las letras */
-    --accent-orange: #ff451a;  /* Naranja/Rojo vivo de los botones */
-    --accent-blue: #2563eb;    /* Azul para los resaltados */
+    --bg-cream: #f6f3e8;       /* El crema exacto del fondo */
+    --black: #000000;          /* Negro puro */
+    --orange-red: #ff3e11;     /* El naranja-rojo de "COSAS", las etiquetas y el botón */
+    --blue-download: #1c4ed8;  /* El azul del botón 'descargar' */
 }
 
 * {
@@ -12,152 +14,240 @@
     padding: 0;
 }
 
-body {
-    font-family: 'Impact', 'Arial Black', sans-serif; /* Para lograr las letras gigantes y robustas */
-    background-color: var(--bg-color);
-    color: var(--text-black);
+html {
+    scroll-behavior: smooth; /* Hace que el menú navegue suavemente hacia abajo */
 }
 
-/* --- MENÚ DE NAVEGACIÓN --- */
+body {
+    background-color: var(--bg-cream);
+    color: var(--black);
+    font-family: 'Space Grotesk', -apple-system, sans-serif;
+    overflow-x: hidden;
+}
+
+/* --- MENÚ SUPERIOR (HEADER) --- */
 header {
-    background-color: var(--bg-color);
-    border-bottom: 3px solid var(--text-black);
-    padding: 15px 40px;
+    background-color: var(--bg-cream);
+    border-bottom: 2px solid var(--black);
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed; /* Se queda arriba fijo mientras bajas */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .logo {
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    letter-spacing: -1px;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    letter-spacing: -1.5px;
 }
 
 .logo span {
-    background-color: var(--text-black);
-    color: var(--bg-color);
-    padding: 2px 8px;
-    margin-right: -4px;
+    background-color: var(--black);
+    color: var(--bg-cream);
+    padding: 2px 6px;
+    margin-right: 2px;
+}
+
+.logo::after {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 30px;
+    background-color: var(--orange-red);
+    margin-left: 2px;
+    vertical-align: middle;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 25px;
+    gap: 30px;
 }
 
 nav a {
-    font-family: 'Courier New', Courier, monospace; /* Fuente monospace para el menú */
-    color: var(--text-black);
+    color: var(--black);
     text-decoration: none;
-    font-weight: bold;
-    font-size: 0.95rem;
+    font-weight: 700;
+    font-size: 0.85rem;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 nav a:hover {
-    border-bottom: 2px solid var(--text-black);
+    opacity: 0.7;
 }
 
-/* --- SECCIÓN PRINCIPAL (HERO) --- */
-.hero-container {
-    max-width: 1200px;
+/* --- SECCIÓN HERO (IMAGEN REFERENCIA) --- */
+.hero-section {
+    max-width: 1300px;
     margin: 0 auto;
-    padding: 60px 40px;
-    display: grid;
-    grid-template-columns: 1fr;
-    position: relative;
-}
-
-/* Etiquetas superiores pequeñas */
-.badges {
+    padding: 160px 40px 80px 40px; /* Margen superior para no dar con el header fijo */
     display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-    font-family: 'Courier New', Courier, monospace;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
 }
 
-.badge {
-    font-size: 0.75rem;
+.badges-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.badge-rect {
+    font-size: 0.65rem;
     font-weight: bold;
-    padding: 4px 8px;
-    border: 2px solid var(--text-black);
     text-transform: uppercase;
+    padding: 3px 6px;
+    border: 1.5px solid var(--black);
+    letter-spacing: 0.5px;
 }
 
-.badge.orange {
-    background-color: var(--accent-orange);
+.badge-rect.filled {
+    background-color: var(--orange-red);
     color: white;
+    border-color: var(--orange-red);
 }
 
-/* Título Gigante */
-.hero-title {
-    font-size: 6.5rem; /* Letras masivas */
-    line-height: 0.85;
+/* El Texto Gigante Idéntico */
+.huge-text {
+    font-family: 'Arial Black', Impact, sans-serif;
+    font-size: 7.5rem; /* Ajuste masivo */
+    line-height: 0.88;
+    font-weight: 900;
     text-transform: uppercase;
+    letter-spacing: -4px;
+    max-width: 900px;
+}
+
+.text-color-orange {
+    color: var(--orange-red);
+}
+
+.black-highlight {
+    background-color: var(--black);
+    color: var(--bg-cream);
+    padding: 2px 16px 2px 10px;
+    display: inline-block;
     letter-spacing: -2px;
-    max-width: 800px;
 }
 
-/* El bloque negro que encierra a "CÓDIGO" */
-.black-block {
-    background-color: var(--text-black);
-    color: var(--bg-color);
-    padding: 0 15px;
-    display: inline-block;
-}
-
-.text-orange {
-    color: var(--accent-orange);
-}
-
-/* --- TEXTO DE DESCRIPCIÓN --- */
-.hero-description {
-    font-family: 'Courier New', Courier, monospace; /* Tipo de letra de máquina de escribir */
-    font-size: 1.1rem;
-    font-weight: bold;
-    line-height: 1.4;
-    max-width: 400px;
-    margin-left: auto; /* Lo empuja a la derecha como tu imagen */
-    margin-top: -40px; /* Ajuste para encajar con el texto gigante */
-}
-
-.highlight-blue {
-    background-color: var(--accent-blue);
-    color: white;
-    padding: 0 4px;
-}
-
-/* --- EL BOTÓN DEL RECTÁNGULO DEBAJO (Tu firma de diseño) --- */
-.btn-container {
+/* Bloque Inferior derecho (Descripción + Botón) */
+.hero-footer-block {
     display: flex;
-    justify-content: flex-end; /* Lo alinea debajo del texto de descripción */
-    max-width: 1200px;
-    padding: 20px 40px;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: -60px; /* Sube para alinearse al lado de 'PAPEL' */
+    padding-right: 40px;
 }
 
-.btn-retro {
-    font-family: 'Impact', sans-serif;
-    font-size: 1.3rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.desc-text {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #2b2b2b;
+    max-width: 360px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.blue-inline-btn {
+    background-color: var(--blue-download);
     color: white;
-    background-color: var(--text-black);
-    padding: 15px 35px;
-    border: none;
+    padding: 1px 5px;
     text-decoration: none;
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    
-    /* El bloque de color naranja desfasado justo detrás */
-    box-shadow: 10px 10px 0px 0px var(--accent-orange);
-    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    font-weight: bold;
 }
 
-/* Efecto al hacer clic */
-.btn-retro:active {
-    transform: translate(5px, 5px);
-    box-shadow: 5px 5px 0px 0px var(--accent-orange);
+/* EL BOTÓN "VER TRABAJOS" EXACTO */
+.btn-ver-trabajos {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: white;
+    background-color: var(--black);
+    padding: 16px 30px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    border: none;
+    position: relative;
+    box-shadow: 8px 8px 0px 0px var(--orange-red); /* Sombra plana gruesa naranja */
+    transition: transform 0.05s ease, box-shadow 0.05s ease;
+}
+
+.btn-ver-trabajos:active {
+    transform: translate(4px, 4px);
+    box-shadow: 4px 4px 0px 0px var(--orange-red);
+}
+
+/* --- SECCIONES DE CONTENIDO (Para subir tus cosas) --- */
+.content-section {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 100px 40px;
+    border-top: 2px solid var(--black);
+}
+
+.section-title {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    letter-spacing: -1px;
+}
+
+/* Rejilla para meter imágenes de Renders, Modelos o Props */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+/* Tarjeta vacía lista para rellenar */
+.portfolio-item {
+    background-color: white;
+    border: 2px solid var(--black);
+    box-shadow: 6px 6px 0px var(--black);
+    overflow: hidden;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 2px solid var(--black);
+}
+
+.item-info {
+    padding: 20px;
+}
+
+.item-info h3 {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.item-info p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* --- RESPONSIVO --- */
+@media (max-width: 900px) {
+    .huge-text { font-size: 4.5rem; letter-spacing: -2px; }
+    .hero-footer-block { margin-top: 20px; align-items: flex-start; padding-right: 0; }
+    header { padding: 20px; }
+    nav ul { display: none; } /* Oculta menú en móviles por espacio */
 }
